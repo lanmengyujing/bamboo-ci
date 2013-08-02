@@ -1,0 +1,15 @@
+and(
+	xrank(
+		xrank(
+			tagsdescriptions:string("word1 word2 word3",mode="or"), 
+			tagsdescriptions:string("word1 word2 word3",mode="all"),
+			boost=100000
+		),
+		descriptions:equals("word1 word2 word3"),
+		boost=500000
+		),
+ 	status:string("tagged")
+)
+
+
+and(xrank(xrank(tagsdescriptions:string("word1 word2 word3",mode="or"), tagsdescriptions:string("word1 word2 word3",mode="all"),boost=100000), descriptions:equals("word1 word2 word3"),boost=500000), status:string("tagged"))
